@@ -19,7 +19,7 @@
 		<a href="/blog">blog</a>
 		<div>
 			<a target="__blank" href="https://github.com/Abban-Fahim/"><i class="bi bi-github" /></a>
-			<a target="__blank" href="https://www.instagram.com/abbanfahim__/"><i class="bi bi-instagram" /></a>
+			<a target="__blank" href="https://www.instagram.com/abbanf__/"><i class="bi bi-instagram" /></a>
 			<a target="__blank" href="https://www.linkedin.com/in/abban-fahim/"><i class="bi bi-linkedin" /></a>
 		</div>
 	</nav>
