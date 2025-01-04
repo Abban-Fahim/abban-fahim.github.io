@@ -10,13 +10,13 @@
 </script>
 
 <header>
-	<a id="logo" href="/personal-site/"><img src="/personal-site/m-abban.png" width="128" alt="Logo" /></a>
+	<a id="logo" href="/"><img src="/public/m-abban.png" width="128" alt="Logo" /></a>
 	<button type="button" id="collapser" on:click={toggleNav}>
 		<i bind:this={navIcon} class="bi bi-plus" />
 	</button>
 	<nav bind:this={navElement} class="hidden">
-		<a href="/personal-site/projects">projects</a>
-		<a href="/personal-site/blog">blog</a>
+		<a href="/projects">projects</a>
+		<a href="/blog">blog</a>
 		<div>
 			<a target="__blank" href="https://github.com/Abban-Fahim/"><i class="bi bi-github" /></a>
 			<a target="__blank" href="https://www.instagram.com/abbanfahim__/"><i class="bi bi-instagram" /></a>

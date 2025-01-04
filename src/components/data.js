@@ -1,6 +1,6 @@
 export const projects = [
 	{
-		title: "Robotics projects",
+		title: "Robotics",
 		projs: [
 			{
 				title: "Tic-Tac-Toe playing robot",
@@ -61,6 +61,10 @@ export const skills = [
 
 // Script run for generating above object
 
+function generateUniform(start, end) {
+	return Math.round(Math.random() * (end - start)) - start;
+}
+
 export function main() {
 	let obj = [];
 	const connections = [
@@ -109,19 +113,81 @@ export function main() {
 		"linux->bash",
 		"linux->rust",
 	];
+
+	// Poisson disc samppling to place all the nodes evenly
+	let k = 15;
+	let n = 2;
+	let r = 1;
+	let xSize = 20;
+	let ySize = 8;
+	let sampleGrid = new Array(ySize).fill(new Array(xSize).fill(-1));
+	let activeList = [];
+	// console.log(sampleGrid);
+
+
 	connections.forEach((c) => {
 		let connArray = c.split("->");
 		if (connArray.length > 1) {
 			obj[obj.findIndex((val) => val.id === connArray[0])].to.push(connArray[1]);
 			obj[obj.findIndex((val) => val.id === connArray[1])].from.push(connArray[0]);
 		} else {
+
+			// Generate random postion according to disc sampling
+			if (activeList.length != 0) {
+				let i = generateUniform(0, activeList.length);
+				let refX = activeList[i][1];
+				let refY = activeList[i][0];
+				
+				
+				let newX;
+				let newY;
+				let notAccepted = true;
+				let t = 0;
+
+				// Generate upto k points
+				while (notAccepted || t < k) {
+					t++;
+					let newPhi = Math.random() * 2*Math.PI;
+					let newR = generateUniform(r, 2*r);
+					newX = refX + newR * Math.cos(newPhi);
+					newY = refY + newR * Math.sin(newPhi);
+
+					// Search if point is valid
+					if (newX >= 0 && newX < xSize && newY >= 0 && newY < ySize) {
+						for (let y = 0; y < ySize; y++) {
+							for (let x = 0; x < xSize; y++) {
+								let gridPoint = sampleGrid[y][x];
+								notAccepted = false;
+								if (gridPoint !== -1) {
+									let gridX = activeList[gridPoint][1];
+									let gridY = activeList[gridPoint][0];
+									if (((gridX - newX) * (gridX - newX) + (gridY - newY) * (gridY - newY)) < (r * r)) {
+										notAccepted = true;
+									}
+								}
+							}
+						}
+					}
+				}
+				sampleGrid[Math.round(newX)][Math.round(newY)] = i;
+				activeList.push([newX, newY]);
+			} else {
+				let x = generateUniform(0, xSize);
+				let y = generateUniform(0, ySize);
+				sampleGrid[y][x] = 0;
+				// y is stored at index 0, x stored at 1
+				activeList.push([y, x]);
+			}
+
+			let latestVal = activeList.length - 1;
+			console.log(activeList[latestVal]);
 			connArray = c.split(",");
 			obj.push({
 				id: connArray[0],
 				title: connArray[1],
 				to: [],
 				from: [],
-				pos: { x: Number(connArray[2]) * 100, y: Number(connArray[3]) * 100 },
+				pos: { x: activeList[latestVal][1] * 100, y: activeList[latestVal][1] * 100 },
 			});
 		}
 	});

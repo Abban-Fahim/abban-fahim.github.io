@@ -17,7 +17,9 @@
 </script>
 
 <main>
-	<h1>Hi there!</h1>
+	<h3>About me</h3>
+	<p>I'm <strong>Muhammad Abban</strong>, a student and aspiring scientist, hoping to make this world a better place with my skills.</p>
+	<!-- <h1>Hi there!</h1>
 	<h2>I'm <strong>Muhammad Abban</strong></h2>
 	<h2 dir="rtl">اسمي <strong> محمد ابان</strong></h2>
 	<h4 class="flexCentred big-pad">
@@ -32,8 +34,8 @@
 		<h4>
 			And a founder of <strong> <a href="https://bruh-corp.github.io/">Bruh Corp.</a></strong>
 		</h4>
-		<img src="/personal-site/bru.gif" alt="Gif of Bruh Corp logo" />
-	</div>
+		<img src="/bru.gif" alt="Gif of Bruh Corp logo" />
+	</div> -->
 	<!-- <div class="flexCentred" style="justify-content: space-around;">
 		<Canvas size={{ width: BCWidth, height: BCHeight }}>
 			<BruhCorp />

@@ -28,6 +28,10 @@ $br: 4px;
 	stroke-width: 4px !important;
 }
 
+main {
+	padding: 28px;
+}
+
 main > div {
 	padding: 28px;
 }
@@ -69,7 +73,7 @@ main > div {
 		}
 		scale: 1.05;
 		box-shadow: $shadow 0 0 30px $br;
-		background: $primary top/10% url("/personal-site/brick-wall.png");
+		background: $primary top/10% url("/brick-wall.png");
 	}
 }
 
