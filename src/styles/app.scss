@@ -28,10 +28,6 @@ $br: 4px;
 	stroke-width: 4px !important;
 }
 
-main {
-	padding: 28px;
-}
-
 main > div {
 	padding: 28px;
 }
@@ -160,7 +156,6 @@ footer {
 	}
 	nav {
 		width: 100%;
-		transition: 0.4s;
 		& > a {
 			width: 100%;
 			text-align: left;
@@ -177,12 +172,10 @@ footer {
 		right: $p;
 		transform: none;
 		border-radius: $br;
-		i {
-			transition: 0.3s;
-		}
 	}
 	.bi-plus.hidden {
 		transform: rotate(45deg);
 		display: inline-block;
+		transition: transform 0.3s;
 	}
 }

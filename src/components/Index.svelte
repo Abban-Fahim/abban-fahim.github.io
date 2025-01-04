@@ -10,7 +10,7 @@
 </script>
 
 <header>
-	<a id="logo" href="/"><img src="/public/m-abban.png" width="128" alt="Logo" /></a>
+	<a id="logo" href="/"><img src="/m-abban.png" width="128" alt="Logo" /></a>
 	<button type="button" id="collapser" on:click={toggleNav}>
 		<i bind:this={navIcon} class="bi bi-plus" />
 	</button>

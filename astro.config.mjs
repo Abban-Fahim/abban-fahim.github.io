@@ -10,7 +10,6 @@ export default defineConfig({
     syntaxHighlight: "prism",
   },
   site: "https://abban-fahim.github.io/",
-  // base: "/personal-site",
   integrations: [svelte()],
   vite: {
     plugins: [threeMinifier()],
