@@ -23,9 +23,17 @@ $br: 4px;
 	font-size: 24px !important;
 }
 
-.edge {
-	stroke-dasharray: 19;
-	stroke-width: 4px !important;
+
+.graph_node {
+	fill: $bg-layer;
+}
+.graph_edge {
+	stroke: $primary;
+	stroke-dasharray: 10 5 10;
+}
+.graph_label {
+	fill: $secondary;
+	pointer-events: none;
 }
 
 main > div {

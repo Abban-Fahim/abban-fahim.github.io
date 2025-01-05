@@ -50,7 +50,7 @@
 	</div> -->
 	<div class="flexCentred" style="justify-content: space-around;">
 		<h4><strong>My skills </strong></h4>
-		<div style="width: 100%;">
+		<div style="width: 100%; text-align: center;">
 			<Graph />
 		</div>
 	</div>

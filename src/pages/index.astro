@@ -6,5 +6,5 @@ import CommonHead from "./../components/CommonHead.astro";
 
 <CommonHead title="Muhammad Abban" desc="This is a site about me!" />
 <Index client:load>
-	<Home client:load />
+	<Home client:only="svelte" />
 </Index>

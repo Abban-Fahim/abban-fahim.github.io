@@ -20,8 +20,11 @@
         "@astrojs/svelte": "^3.1.1",
         "@threlte/core": "^6.0.8",
         "@threlte/extras": "^5.6.3",
+        "@types/d3": "^7.4.3",
         "@types/three": "^0.156.0",
+        "3d-force-graph": "^1.74.5",
         "astro": "^2.10.14",
+        "d3": "^7.9.0",
         "svelte-routing": "^1.6.0",
         "svelvet": "^9.0.0",
         "three": "^0.156.1"
