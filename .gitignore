@@ -8,3 +8,9 @@ dist-ssr
 
 Session.vim
 .obsidian/
+
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz

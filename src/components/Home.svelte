@@ -26,6 +26,13 @@
 		</div>
 		<img src="/moi.jpg" alt="a pic of me outdoors, in some amazing weather" style="width: 280px; border: 12px #17ad98 groove;">
 	</div>
+	
+	<div class="flexCentred" style="justify-content: space-around;">
+		<h3>My skills</h3>
+		<div style="width: 100%; text-align: center;">
+			<Graph />
+		</div>
+	</div>
 	<!-- <h1>Hi there!</h1>
 	<h2>I'm <strong>Muhammad Abban</strong></h2>
 	<h2 dir="rtl">اسمي <strong> محمد ابان</strong></h2>
@@ -48,10 +55,4 @@
 			<BruhCorp />
 		</Canvas>
 	</div> -->
-	<div class="flexCentred" style="justify-content: space-around;">
-		<h4><strong>My skills </strong></h4>
-		<div style="width: 100%; text-align: center;">
-			<Graph />
-		</div>
-	</div>
 </main>

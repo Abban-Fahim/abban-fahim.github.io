@@ -1,0 +1,369 @@
+% Template from:
+% https://www.overleaf.com/latex/templates/rendercv-engineeringresumes-theme/shwqvsxdgkjy
+
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=2 cm, % seperation between body and page edge from the top
+    bottom=2 cm, % seperation between body and page edge from the bottom
+    left=2 cm, % seperation between body and page edge from the left
+    right=2 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 0, 0} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Abban Fahim's CV},
+    pdfauthor={Abban Fahim},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% Some settings:
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0.15cm} % set column seperation
+\pagenumbering{gobble} % no page numbering
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.3 cm
+}{
+    % bottom space:
+    0.2 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for three column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \begin{header}
+        \fontsize{25 pt}{25 pt}\selectfont Muhammad Abban Fahim
+
+        \vspace{5 pt}
+
+        \normalsize
+        \mbox{Dubai, United Arab Emirates}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{mailto:m.abbanfahim@gmail.com}{m.abbanfahim@gmail.com}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{tel:+97155596441}{+97155596441}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://abban-fahim.github.io/}{abban-fahim.github.io}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/abban-fahim}{linkedin.com/in/abban-fahim}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://github.com/abban-fahim}{github.com/abban-fahim}}%
+    \end{header}
+
+    \vspace{5 pt - 0.3 cm}
+
+
+    \section{About me}        
+        \begin{onecolentry}
+           I am a third year undergraduate student of robotics engineering, with research interests in machine vision and reinforcement learning and their applications to autonomous systems. With multiple years of software engineering experience, strong theoretical knowledge, and a constant drive to learn and try new things, I am an aspiring researcher and engineer, looking to apply robotics to real-life problems and products.
+        \end{onecolentry}
+
+    \section{Education}
+        
+        \begin{twocolentry}{
+            Sept 2022 – June 2026
+        }
+            \textbf{Heriot-Watt University}, BEng - Robotics, Autonomous and Interactive Systems\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item GPA: 3.9
+                % \item \textbf{Capstone} Computer Architecture, Comparison of Learning Algorithms, Computational Theory
+            \end{highlights}
+        \end{onecolentry}
+
+
+    \section{Skills}
+
+        \begin{onecolentry}
+            \textbf{Languages:} C++, C, Python, Javscript, C\#, Rust, Lua, Java
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+        \textbf{Technologies}
+        \begin{tabularx}{\textwidth}{c *{6}{Y}}
+            ROS & Unity & MATLAB & PyTorch & OpenCV & PlatformIO \\ Linux & Web development & Svelte & ReactJS & Flask & NodeJS \\ & & Love2D & OpenGL
+        \end{tabularx}
+    \end{onecolentry}
+
+    
+    \section{Experience}
+
+        \begin{twocolentry}{
+            July 2024 – Present
+        }
+        \textbf{Researcher}, Heriot-Watt University -- Dubai, UAE\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developing a surface-water cleaning USV, focusing on vision-aided autonomous navigation and localisation.
+                \item Administering the software engineering aspects of the USV, and developed a photorealistic hardware-in-the-loop simulation with Unity and ROS to enable testing without deployment.
+                \item Drafted design and budget proposals and secured funding to prototype.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+        \begin{twocolentry}{
+            Sept 2024 – Jan 2025
+        }
+            \textbf{President}, E4L Society, Heriot-Watt University -- Dubai, UAE\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Organised the university’s engineering society, from managing events, educational workshops and competitions for students to learn and demosntrate engineering skills, to leading these workshops. 
+                \item Recruited and led a team to manage the society's finances, planning, and outreach.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+            June 2024 – Sept 2024
+        }
+            \textbf{Simulation engineer intern}, Alp Autonomy -- Remote\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed a hardware-in-the-loop simulator for UAVs, to test flight planning, and generate synthetic data for training deep-learning image segmentation models.
+                \item Demonstrated knowledge of and utilised the Unity game engine, OpenCV, PyTorch and ROS.
+            \end{highlights}
+        \end{onecolentry}
+
+
+
+   
+    % InshAllah soon!
+    % \section{Publications}
+    %
+    %
+    %
+    %     
+    %     \begin{samepage}
+    %         \begin{twocolentry}{
+    %             Jan 2004
+    %         }
+    %             \textbf{3D Finite Element Analysis of No-Insulation Coils}
+    %         \end{twocolentry}
+    %
+    %         \vspace{0.10 cm}
+    %         
+    %         \begin{onecolentry}
+    %             \mbox{Frodo Baggins}, \mbox{\textbf{\textit{John Doe}}}, \mbox{Samwise Gamgee}
+    %
+    %             \vspace{0.10 cm}
+    %             
+    %     \href{https://doi.org/10.1109/TASC.2023.3340648}{10.1109/TASC.2023.3340648}
+    %     \end{onecolentry}
+    %     \end{samepage}
+
+
+    
+    \section{Projects}
+        
+        \begin{twocolentry}{
+            \href{https://github.com/Abban-Fahim/b38ro-project/}{GitHub link}
+        }
+            \textbf{Tic-tac-toe robot}\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+            \item Dveloped programs with ROS2 and Moveit2 to interface with a manipulator, and V-REP (CoppeliaSim) for simulating a test scene.
+            \item Implemented low-level tasks from scratch with IK and FK.
+            \item Integrated computer vision to allow multiple agents to play tic-tac-toe against the manipulator.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+            \href{https://www.linkedin.com/posts/abban-fahim_extremely-happy-to-announce-my-team-at-heriot-watt-activity-7191019075861409793-ZwxJ?utm_source=social_share_sheet&utm_medium=member_desktop_web}{LinkedIn link}
+        }
+        \textbf{A2RL STEM Competition 2024}\end{twocolentry}
+        
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Participated in the competition to develop autonomous racing software for miniature RC cars.
+                \item Secured first place in the competition.
+                \item Implemented theory of PID control, dynamic models, using Python and ROS, to optimise offline trajectories, and mathemtical techniques to learn and improve control parameters.
+            \end{highlights}
+
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+            \href{https://github.com/Abban-Fahim/MCQ/}{GitHub link}
+        }
+            \textbf{CIE MCQ Website}\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed a responsive web app for solving CAIE IGCSE and A-level MCQ questions for multiple subjects.
+                \item Implemented real-time feedback, time-tracking and PDF processing.
+                \item Improved results for over a 1000 students, and used feedback to improve and prioritise new app features.
+            \end{highlights}
+        \end{onecolentry} 
+    
+    \section{Awards}
+
+        \begin{onecolentry}
+            \textbf{Curtin University Dubai Hackathon 2022}, Second place
+            \begin{highlights}
+                \item Winner in one-day hackathon with a series of challenges involving Python and web development.
+            \end{highlights}
+
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{GSMUN 2021}, Best Research, DISEC
+            \begin{highlights}
+                \item Award for best research work done, showcased in an exceptionnal position paper and during debates.
+            \end{highlights}
+        \end{onecolentry}
+
+
+
+
+
+\end{document}
