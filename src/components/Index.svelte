@@ -17,6 +17,7 @@
 	<nav bind:this={navElement} class="hidden">
 		<a href="/projects">projects</a>
 		<a href="/blog">blog</a>
+		<a href="/notes">notes</a>
 		<a href="/resume/AbbanFahimCV.pdf">resume</a>
 		<div>
 			<a target="__blank" href="https://github.com/Abban-Fahim/"><i class="bi bi-github" /></a>
