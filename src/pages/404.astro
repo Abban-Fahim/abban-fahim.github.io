@@ -1,10 +1,8 @@
 ---
-import CommonHead from "../components/CommonHead.astro";
-import Index from "./../components/Index.svelte";
+import Layout from "../components/Layout.astro";
 ---
 
-<CommonHead title="Error 404" desc="" />
-<Index client:load>
+<Layout title="Error 404" desc="">
   <main>
     <h1><strong>Error 404</strong></h1>
     <h1>How'd you end up here?</h1>
@@ -12,4 +10,4 @@ import Index from "./../components/Index.svelte";
       Report a missing page <a href="https://github.com/Abban-Fahim/abban-fahim.github.io/issues">here</a>
     </h2>
   </main>
-</Index>
+</Layout>

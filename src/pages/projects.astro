@@ -1,10 +1,8 @@
 ---
-import Index from "./../components/Index.svelte";
-import CommonHead from "./../components/CommonHead.astro";
 import ProjectsPage from "./../components/Projects.svelte";
+import Layout from "../components/Layout.astro";
 ---
 
-<CommonHead title="My projects" desc="A few of my projects, both in and outside of the computing world" />
-<Index client:load>
+<Layout title="My projects" desc="A few of my projects, both in and outside of the computing world">
   <ProjectsPage client:load />
-</Index>
+</Layout>

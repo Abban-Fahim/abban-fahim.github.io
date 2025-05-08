@@ -1,10 +1,9 @@
 ---
 import Home from "./../components/Home.svelte";
-import Index from "./../components/Index.svelte";
-import CommonHead from "./../components/CommonHead.astro";
+import Layout from "./../components/Layout.astro";
 ---
 
-<CommonHead title="Muhammad Abban" desc="This is a site about me!" />
-<Index client:load>
+<Layout title="Muhammad Abban" desc="This is a site about me!">
 	<Home client:only="svelte" />
-</Index>
+</Layout>
+	

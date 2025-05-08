@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import Template from "./../../components/BlogTemplate.svelte";
-import CommonHead from "./../../components/CommonHead.astro";
+import Layout from "../../components/Layout.astro";
 
 export async function getStaticPaths() {
 	const blogEntries = await getCollection("blog");
@@ -15,20 +14,23 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<CommonHead title={entry.data.title} desc="" />
-<Template entry={entry} client:load>
-	<Content />
-</Template>
-<footer>
-	<p xmlns:cc="http://creativecommons.org/ns#">
-		This work is licensed under <a
-			href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"
-			target="_blank"
-			rel="license noopener noreferrer"
-			style="display:inline-block;"
-			>CC BY 4.0
-		</a>
-		<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" />
-		<img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" />
-	</p>
-</footer>
+<Layout title={entry.data.title} desc="">
+	<h6 id="details">{entry.data.title} -- {entry.data.date}</h6>
+	<article>
+		<Content />
+	</article>
+
+	<footer>
+		<p xmlns:cc="http://creativecommons.org/ns#">
+			This work is licensed under <a
+				href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"
+				target="_blank"
+				rel="license noopener noreferrer"
+				style="display:inline-block;"
+				>CC BY 4.0
+			</a>
+			<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" />
+			<img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" />
+		</p>
+	</footer>
+</Layout>

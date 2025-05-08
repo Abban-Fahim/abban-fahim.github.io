@@ -3,7 +3,6 @@
 	import Waterfall from "./waterfall.svelte";
 	import { Canvas } from "@threlte/core";
 	import BruhCorp from "./BruhCorp.svelte";
-	import "./../styles/generic.scss";
 	import { onMount } from "svelte";
 	import Graph from "./Graph.svelte";
 
@@ -33,6 +32,12 @@
 			<Graph />
 		</div>
 	</div>
+	
+	<div style="justify-content: space-around;">
+		<p>My research interests are in <strong>computer vision</strong> and <strong>reinforcement learning</strong>, specially when applied to control robots, and I'm excited in particular about neuromorphic computing and <strong>event cameras</strong>, which hold much untapped potential for the future of robotics.</p>
+		<p>Outside of academic work and coding, I like to drink a lot of tea, read sometimes and compose some music.</p>
+	</div>
+
 	<!-- <h1>Hi there!</h1>
 	<h2>I'm <strong>Muhammad Abban</strong></h2>
 	<h2 dir="rtl">اسمي <strong> محمد ابان</strong></h2>

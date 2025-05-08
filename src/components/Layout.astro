@@ -1,0 +1,57 @@
+---
+const { title, desc } = Astro.props;
+import "./../styles/generic.scss";
+---
+
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="/m-abban.png" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={desc} />
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Vazirmatn&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  </head>
+
+  <body>
+    <header>
+      <a id="logo" href="/"><img src="/m-abban.png" width="128px" alt="Logo" /></a>
+      <button type="button" id="collapser">
+        <i id="navIcon" class="bi bi-plus" />
+      </button>
+      <nav id="navElement" class="hidden">
+        <a href="/projects">projects</a>
+        <a href="/blog">blog</a>
+        <a href="/notes">notes</a>
+        <!-- <a href="/publications">publications</a> Soon :) -->
+        <a href="/resume/AbbanFahimCV.pdf">resume</a>
+        <div>
+          <a target="__blank" href="https://github.com/Abban-Fahim/"><i class="bi bi-github" /></a>
+          <a target="__blank" href="https://www.instagram.com/abbanf__/"><i class="bi bi-instagram" /></a>
+          <a target="__blank" href="https://www.linkedin.com/in/abban-fahim/"><i class="bi bi-linkedin" /></a>
+        </div>
+      </nav>
+    </header>
+    
+    <slot />
+  
+  </body>
+
+  <script>
+    let navElement = document.getElementById("navElement");
+    let navIcon = document.getElementById("navIcon");
+    
+    document.getElementById("collapser")?.addEventListener("click", () => {
+      navElement?.classList.toggle("hidden");
+      navIcon?.classList.toggle("hidden");
+    })
+  </script>
+</html>
+  
+  

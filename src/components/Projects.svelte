@@ -1,5 +1,4 @@
 <script>
-  import "./../styles/generic.scss";
   import { projects } from "./data";
 </script>
 

@@ -1,13 +1,11 @@
 ---
-import Index from "./../components/Index.svelte";
-import CommonHead from "./../components/CommonHead.astro";
 import { getCollection } from "astro:content";
+import Layout from "../components/Layout.astro";
 
 const allPosts = await getCollection("blog");
 ---
 
-<CommonHead title="Blog posts" desc="This is a collection of all my written work and other thoughts" />
-<Index client:load>
+<Layout title="Blog posts" desc="This is a collection of all my written work and other thoughts">
 	<article>
 		<h3>All posts</h3>
 		{
@@ -26,17 +24,17 @@ const allPosts = await getCollection("blog");
 				})
 		}
 	</article>
-</Index>
-<footer>
-	<p xmlns:cc="http://creativecommons.org/ns#">
-		This work is licensed under <a
-			href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"
-			target="_blank"
-			rel="license noopener noreferrer"
-			style="display:inline-block;"
-			>CC BY 4.0
-		</a>
-		<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" />
-		<img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" />
-	</p>
-</footer>
+	<footer>
+		<p xmlns:cc="http://creativecommons.org/ns#">
+			This work is licensed under <a
+				href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"
+				target="_blank"
+				rel="license noopener noreferrer"
+				style="display:inline-block;"
+				>CC BY 4.0
+			</a>
+			<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" />
+			<img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" />
+		</p>
+	</footer>
+</Layout>
